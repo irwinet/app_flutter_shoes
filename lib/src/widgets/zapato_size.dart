@@ -9,7 +9,7 @@ class ZapatoSizePreview extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 30, vertical: 5),
       child: Container(
         width: double.infinity,
-        height: 430,
+        height: 490,
         decoration: BoxDecoration(
           color: Color(0xffFFCF53),
           borderRadius: BorderRadius.circular(50)
@@ -17,12 +17,64 @@ class ZapatoSizePreview extends StatelessWidget {
         child: Column(
           children: [
             // TODO Zapato con sombra
-            _ZapatoConSombra()
+            _ZapatoConSombra(),
 
             // TODO Tallas
-            
+            _ZapatoTallas()
           ],
         ),
+      ),
+    );
+  }
+}
+
+class _ZapatoTallas extends StatelessWidget {
+  const _ZapatoTallas({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          _TallaZapatoCaja(7),
+          _TallaZapatoCaja(7.5),
+          _TallaZapatoCaja(8),
+          _TallaZapatoCaja(8.5),
+          _TallaZapatoCaja(9),
+          _TallaZapatoCaja(9.5),
+        ],
+      ),
+    );
+  }
+}
+
+class _TallaZapatoCaja extends StatelessWidget {
+  
+  final double numero;
+
+  const _TallaZapatoCaja(this.numero);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      alignment: Alignment.center,
+      child: Text('${numero.toString().replaceAll('.0', '')}',
+        style: TextStyle(
+          color: Color(0xffF1A23A),
+          fontSize: 16,
+          fontWeight: FontWeight.bold
+        ),
+      ),
+      width: 45,
+      height: 45,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+        boxShadow: [
+          // TODO BoxShadow Select
+        ]
       ),
     );
   }
