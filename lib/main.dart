@@ -1,3 +1,4 @@
+import 'package:app_flutter_shoes/src/pages/zapato_desc_page.dart';
 import 'package:app_flutter_shoes/src/pages/zapato_page.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Shoes App',
       debugShowCheckedModeBanner: false,
-      home: ZapatoPage(),
+      // home: ZapatoPage(),
+      home: ZapatoDescPage(),
     );
   }
 }
