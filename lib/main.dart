@@ -1,8 +1,19 @@
+import 'package:app_flutter_shoes/src/models/zapato_model.dart';
 import 'package:app_flutter_shoes/src/pages/zapato_desc_page.dart';
 import 'package:app_flutter_shoes/src/pages/zapato_page.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  return runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ZapatoModel())
+      ],
+      child: MyApp(),
+    )
+  );
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
